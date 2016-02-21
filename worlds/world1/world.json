@@ -1,0 +1,14 @@
+{
+	"name": "awesome world",
+	"assets": {
+		"block": {
+			"type": "image",
+			"filename": "block.png"
+		}
+	},
+	"special_blocks": {
+		"33:33:33": {
+			"image": "block"
+		}
+	}
+}
