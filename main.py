@@ -2,7 +2,7 @@ import sys
 import pygame
 from pygame.locals import *
 
-from camera import Camera
+from renderer import Renderer
 from world import World
 
 
@@ -19,6 +19,6 @@ while True:
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
-    c = Camera(world, (0, 0), (1024, 768))
+    c = Renderer(world, (0, 0), (1024, 768))
     DISPLAYSURF.blit(c.render(), (0, 0))
     pygame.display.update()
