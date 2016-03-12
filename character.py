@@ -2,7 +2,7 @@ import pygame
 from block import Block
 
 
-class Player:
+class Character:
     def __init__(self, color, position, size):
         self.color = color
         self.position = position

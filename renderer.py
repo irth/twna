@@ -41,11 +41,11 @@ class Renderer:
             px_x = offset_px_x
             px_y += 32
 
-        for player in self.world.players:
+        for character in self.world.characters:
             surface.blit(
-                player.block.image,
-                (offset_px_x + player.position[0]*32,
-                    offset_px_y + player.position[1]*32 -
-                    (player.size[1]*32 - 32)))
+                character.block.image,
+                (offset_px_x + character.position[0]*32,
+                    offset_px_y + character.position[1]*32 -
+                    (character.size[1]*32 - 32)))
 
         return surface

@@ -11,7 +11,7 @@
 			"image": "block"
 		}
 	},
-	"players": [
+	"characters": [
 		{
 			"color": [255, 0, 0, 255],
 			"position": [1, 1],

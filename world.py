@@ -2,7 +2,7 @@ import pygame
 import os
 import json
 from block import Block
-from player import Player
+from character import Character
 
 
 class World:
@@ -28,12 +28,12 @@ class World:
                 self.special_blocks[block_id] = Block(
                     self.assets[block['image']])
 
-            self.players = []
-            for player in obj['players']:
-                self.players += [Player(
-                    tuple(player['color']),
-                    tuple(player['position']),
-                    tuple(player['size']))]
+            self.characters = []
+            for character in obj['characters']:
+                self.characters += [Character(
+                    tuple(character['color']),
+                    tuple(character['position']),
+                    tuple(character['size']))]
 
     def get_at(self, coords):
         try:
