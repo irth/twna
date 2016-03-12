@@ -45,6 +45,7 @@ class Renderer:
             surface.blit(
                 player.block.image,
                 (offset_px_x + player.position[0]*32,
-                    offset_px_y + player.position[1]*32 - (player.size[1]*32 - 32)))
+                    offset_px_y + player.position[1]*32 -
+                    (player.size[1]*32 - 32)))
 
         return surface
