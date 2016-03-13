@@ -3,10 +3,11 @@ import pygame
 
 
 class Renderer:
-    def __init__(self, world, position, size):
+    def __init__(self, world, position, size, player):
         self.world = world
         self.position = position
         self.size = size
+        self.player = player
 
     def render(self):
         surface = pygame.Surface(self.size)

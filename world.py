@@ -6,7 +6,7 @@ from character import Character
 
 
 class World:
-    def __init__(self, name):
+    def __init__(self, name, players):
         self.name = name
         self.image = pygame.image.load(
             os.path.join('worlds', name, 'world.png'))
@@ -28,12 +28,15 @@ class World:
                 self.special_blocks[block_id] = Block(
                     self.assets[block['image']])
 
+            player_count = len(players)
+
             self.characters = []
             for character in obj['characters']:
-                self.characters += [Character(
-                    tuple(character['color']),
-                    tuple(character['position']),
-                    tuple(character['size']))]
+                c = Character(character['color'],
+                              character['position'],
+                              character['size'])
+                players[character['player'][player_count-1]-1].characters += [c]
+                self.characters += [c]
 
     def get_at(self, coords):
         try:
