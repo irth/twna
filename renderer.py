@@ -2,6 +2,7 @@ import math
 import pygame
 from constants import *
 
+
 def _px2block(pos):
     (x, y) = pos
     return math.floor(x/TILE_SIZE), math.floor(y/TILE_SIZE)

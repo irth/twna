@@ -5,6 +5,7 @@ from block import Block
 from character import Character
 from constants import *
 
+
 class World:
     def __init__(self, name, players):
         self.name = name
