@@ -3,7 +3,7 @@ import os
 import json
 from block import Block
 from character import Character
-
+from constants import *
 
 class World:
     def __init__(self, name, players):
@@ -47,6 +47,6 @@ class World:
         if "%s:%s:%s" % color[:3] in self.special_blocks:
             return self.special_blocks["%s:%s:%s" % color[:3]]
         else:
-            surf = pygame.Surface((32, 32))
+            surf = pygame.Surface((TILE_SIZE, TILE_SIZE))
             surf.fill(color)
             return Block(surf)

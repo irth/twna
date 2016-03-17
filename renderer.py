@@ -1,10 +1,10 @@
 import math
 import pygame
-
+from constants import *
 
 def _px2block(pos):
     (x, y) = pos
-    return math.floor(x/32), math.floor(y/32)
+    return math.floor(x/TILE_SIZE), math.floor(y/TILE_SIZE)
 
 
 def _len(a, b):
@@ -34,8 +34,8 @@ class Renderer:
             for y in range(start_y, end_y+1):
                 block = self.world.get_at((x, y))
                 surface.blit(block.image,
-                             ((x-start_x)*32 - self.position[0] % 32,
-                              (y-start_y)*32 - self.position[1] % 32))
+                             ((x-start_x)*TILE_SIZE - self.position[0] % TILE_SIZE,
+                              (y-start_y)*TILE_SIZE - self.position[1] % TILE_SIZE))
 
         # TODO: draw characters
 
