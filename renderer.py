@@ -38,6 +38,16 @@ class Renderer:
                              ((x-start_x)*TILE_SIZE - self.position[0] % TILE_SIZE,
                               (y-start_y)*TILE_SIZE - self.position[1] % TILE_SIZE))
 
-        # TODO: draw characters
+        for character in self.world.characters:
+            (x, y) = character.position
+            (w, h) = character.size
+            left = self.position[0]/TILE_SIZE - w
+            right = (self.position[0] + self.size[0])/TILE_SIZE + w
+            top = self.position[1]/TILE_SIZE - 1
+            bottom = (self.position[1] + self.size[1])/TILE_SIZE + h - 1
 
+            if left < x < right and top <= y < bottom:
+                surface.blit(character.image,
+                             ((x - (w - 1) - start_x) * TILE_SIZE - self.position[0] % TILE_SIZE,
+                              (y - (h - 1) - start_y) * TILE_SIZE - self.position[1] % TILE_SIZE))
         return surface
