@@ -22,6 +22,12 @@ class Renderer:
     def render(self):
         surface = pygame.Surface(self.size)
 
+        if self.player is not None:
+            char = self.player.characters[self.player.current_character]
+            cam_x = char.position[0] - (self.size[0] / TILE_SIZE - char.size[0]) / 2
+            cam_y = char.position[1] - (char.size[1] - 1) - (self.size[1] / TILE_SIZE - char.size[1]) / 2
+            self.position = (cam_x * TILE_SIZE, cam_y * TILE_SIZE)
+
         a = _px2block(self.position)
         b = _px2block((self.position[0] + self.size[0] - 1,
                        self.position[1]))
@@ -50,4 +56,5 @@ class Renderer:
                 surface.blit(character.image,
                              ((x - start_x) * TILE_SIZE - self.position[0] % TILE_SIZE,
                               (y - (h - 1) - start_y) * TILE_SIZE - self.position[1] % TILE_SIZE))
+
         return surface
