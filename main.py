@@ -15,12 +15,11 @@ pygame.display.set_caption('Hello World!')
 player = Player("bob")
 world = World('world1', [player])
 
-
+c = Renderer(world, (0, 0), (1024, 768), player)
 while True:
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
-    c = Renderer(world, (0, 0), (1024, 768), player)
     DISPLAYSURF.blit(c.render(), (0, 0))
     pygame.display.update()
