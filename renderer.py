@@ -48,6 +48,6 @@ class Renderer:
 
             if left < x < right and top <= y < bottom:
                 surface.blit(character.image,
-                             ((x - (w - 1) - start_x) * TILE_SIZE - self.position[0] % TILE_SIZE,
+                             ((x - start_x) * TILE_SIZE - self.position[0] % TILE_SIZE,
                               (y - (h - 1) - start_y) * TILE_SIZE - self.position[1] % TILE_SIZE))
         return surface
