@@ -56,5 +56,6 @@ class Renderer:
                 surface.blit(character.image,
                              ((x - start_x) * TILE_SIZE - self.position[0] % TILE_SIZE,
                               (y - (h - 1) - start_y) * TILE_SIZE - self.position[1] % TILE_SIZE))
-
+            character.position[0] += 0.05
+            character.position[1] += 0.05
         return surface
