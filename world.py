@@ -39,9 +39,15 @@ class World:
                 players[character['player'][player_count-1]-1].characters += [c]
                 self.characters += [c]
 
+    def _p2c(self, pos):  # px position to cartesian
+        return pos[0], self.image.get_rect().size[1] - (pos[1] + 1)
+
+    def _c2p(self, pos):
+        return self._p2c(pos)  # it's the same formula
+
     def get_at(self, coords):
         try:
-            color = self.image.get_at(coords)
+            color = self.image.get_at(self._c2p(coords))
         except:
             color = (123, 123, 123)
 
